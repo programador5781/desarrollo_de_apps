@@ -1,6 +1,6 @@
 const { searchVideoGameByName, getAllVideoGames, getVideoGameById, createVideoGame, updateVideoGameById,
     deleteVideoGameById
- } = require("../controllers/videoGamesController");
+} = require("../controllers/videoGamesController");
 // Get - videogames
 /* GET | /videogames
 -  Obtiene un arreglo de objetos, donde cada objeto es un videojuego con su información.
@@ -13,7 +13,7 @@ const getVideoGamesHandler = async (req, res) => {
     try {
         let results;
         if (name) results = await searchVideoGameByName(name);
-        else results = await getAllVideoGames();        
+        else results = await getAllVideoGames();
 
         res.status(200).json(results);
     } catch (error) {
@@ -38,7 +38,7 @@ const getVideoGameByIdHandler = async (req, res) => {
 // Put - videogames/:id
 const putUpdateVideoGames = async (req, res) => {
     const { id } = req.params;
-    const updatedData = req.body; 
+    const updatedData = req.body;
 
     try {
         const updatedVideoGame = await updateVideoGameById(id, updatedData);
@@ -50,14 +50,14 @@ const putUpdateVideoGames = async (req, res) => {
 
 // Post - videogames (crear un videojuego)
 const createVideoGameHandler = async (req, res) => {
-    const { name, description, platforms, background_image, released_at, rating } = req.body;    
+    const { name, description, platforms, background_image, released_at, rating } = req.body;
     try {
         const newVideoGame = await createVideoGame(name, description, platforms, background_image, released_at, rating);
-        res.status(201).json(newVideoGame);                
+        res.status(201).json(newVideoGame);
     } catch (error) {
         console.log();
-        res.status(400).send({error:error.message})
-    }    
+        res.status(400).send({ error: error.message })
+    }
 };
 
 // Delete - videogames/:id
