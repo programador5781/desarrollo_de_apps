@@ -1,4 +1,6 @@
-const { searchVideoGameByName, getAllVideoGames, getVideoGameById, createVideoGame, updateVideoGameById } = require("../controllers/videoGamesController");
+const { searchVideoGameByName, getAllVideoGames, getVideoGameById, createVideoGame, updateVideoGameById,
+    deleteVideoGameById
+ } = require("../controllers/videoGamesController");
 // Get - videogames
 /* GET | /videogames
 -  Obtiene un arreglo de objetos, donde cada objeto es un videojuego con su información.
@@ -58,9 +60,22 @@ const createVideoGameHandler = async (req, res) => {
     }    
 };
 
+// Delete - videogames/:id
+const deleteVideoGameHandler = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        await deleteVideoGameById(id);
+        res.status(204).send(); // Devuelve un código 204 (No Content) indicando que la eliminación se realizó con éxito
+    } catch (error) {
+        res.status(500).send({ error: error.message });
+    }
+};
+
 module.exports = {
     getVideoGamesHandler,
     getVideoGameByIdHandler,
     putUpdateVideoGames,
-    createVideoGameHandler
+    createVideoGameHandler,
+    deleteVideoGameHandler
 }

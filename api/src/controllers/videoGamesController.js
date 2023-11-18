@@ -108,6 +108,23 @@ const createVideoGame = async (name, description, platforms, background_image, r
 };
 
 
+// Delete - id 
+// ejemplo:
+//http://localhost:3001/videogames/49f94121-330b-4853-bfc0-18e993c50b1f
+const deleteVideoGameById = async (id) => {
+    try {
+        const deletedRowsCount = await VideoGame.destroy({
+            where: { id }
+        });
+
+        if (deletedRowsCount === 0) {
+            throw new Error(`No se encontró ningún videojuego con el ID ${id}`);
+        }
+    } catch (error) {
+        throw new Error(`Error al eliminar el videojuego: ${error.message}`);
+    }
+};
+
 
 
 module.exports = {
@@ -115,5 +132,6 @@ module.exports = {
     getAllVideoGames,
     getVideoGameById,
     createVideoGame,
-    updateVideoGameById
+    updateVideoGameById,
+    deleteVideoGameById
 }

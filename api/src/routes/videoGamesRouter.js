@@ -3,7 +3,8 @@ const {
     getVideoGamesHandler,
     getVideoGameByIdHandler,
     putUpdateVideoGames,
-    createVideoGameHandler
+    createVideoGameHandler,
+    deleteVideoGameHandler
  } = require("../handlers/videoGamesHandler")
 
 const videoGamesRouter = Router();
@@ -19,5 +20,8 @@ videoGamesRouter.put("/:id", putUpdateVideoGames );
 
 // Post - crear un videojuego
 videoGamesRouter.post("/", createVideoGameHandler );
+
+// DELETE - /videogames/:id
+videoGamesRouter.delete("/:id", deleteVideoGameHandler ); // Ruta para eliminar un videojuego por su ID
 
 module.exports = videoGamesRouter;
