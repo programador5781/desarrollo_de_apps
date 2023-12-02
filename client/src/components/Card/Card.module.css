@@ -1,0 +1,15 @@
+/* Estilos para cada tarjeta de videogmaes */
+.card {
+    width: calc(33.33% - 20px); /* Calcula el ancho para mostrar tres tarjetas por fila */
+    margin-bottom: 20px;
+    background-color: #f0f0f09a; /* Color de fondo de las tarjetas */
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para las tarjetas */
+  }
+  
+  /* Estilos para el contenido de la tarjeta */
+  .card p {
+    margin: 5px 0;
+  }

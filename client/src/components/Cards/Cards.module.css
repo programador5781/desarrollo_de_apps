@@ -1,0 +1,34 @@
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: space-around; /* Distribución equitativa de las tarjetas */
+    margin-top: 55px;
+  }
+  
+  .card {
+    width: calc(30% - 20px); /* Tamaño de cada tarjeta con espacio entre ellas */
+    margin-bottom: 20px; /* Espacio entre las filas */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff7c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: fantasy;
+  }
+  
+  .card p {
+    margin: 0;
+    font-weight: 300;
+  }
+  
+  .card img {
+    width: 50%; /* Tamaño de la imagen */
+    height: auto;
+    border-radius: 4px;
+  }
+  
