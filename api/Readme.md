@@ -1,12 +1,12 @@
 # Desarrollo de App's 
 ## Universidad de Cartagena - Centro Tutorial Mompox
 ### Facultad de Ingeniería - Ingeniería de Software - VI Semestre 2023-2
-#### Ricardo Rico Z - RKD
+
 
 
 # Backend (API)
 
-Este es el backend (API) para el proyecto "Actividad 4". Proporciona la lógica del servidor para gestionar datos relacionados con videojuegos.
+Este es el backend (API) para el proyecto "TCC". Proporciona la lógica del servidor para gestionar datos relacionados con videojuegos.
 
 ## Requisitos previos
 
