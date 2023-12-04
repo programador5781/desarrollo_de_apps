@@ -1,0 +1,58 @@
+/* Estilos para el contenedor principal */
+
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+}
+
+/* Estilos para cada Card */
+.cardItem {
+  width: calc(30% - 20px); /* Reducimos el tamaño base de las tarjetas */
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  transition: transform 0.3s ease; /* Agregamos transición para transformar la escala */
+  text-align: center; /* Centramos el texto dentro de la tarjeta */
+}
+
+/* Ajustamos el margen derecho de la última tarjeta en cada fila para evitar desbordamientos */
+.cardItem:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* Estilos responsivos para ajustar el número de tarjetas por fila en pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .cardItem {
+    width: calc(45% - 20px); /* Ajustamos el tamaño para mostrar 2 tarjetas por fila en pantallas más pequeñas */
+  }
+
+  /* Ajustamos el margen derecho de la última tarjeta en pantallas más pequeñas */
+  .cardItem:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .cardItem {
+    width: 100%; /* Mostramos 1 tarjeta por fila en pantallas más pequeñas */
+    margin-right: 0; /* Asegurar que no haya margen derecho en pantallas más pequeñas */
+  }
+}
+
+/* Efecto al hacer clic */
+.cardItem:hover {
+  transform: scale(1.05); /* Aumenta el tamaño al hacer hover */
+}
+
+/* Estilo para el texto dentro de la tarjeta */
+.cardItem #id, .cardItem #name {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}

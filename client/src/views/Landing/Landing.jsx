@@ -8,10 +8,12 @@ function Landing() {
       <div className={style.overlay}></div>
       <h1 className={style.title}>VIDEOGAMES WORLD</h1>
       <div className={style.buttons}>
+        <Link to="/home">
+          <button>Home</button>
+        </Link>
         <Link to="/login">
           <button>Login</button>
         </Link>
-        <button>Register</button>
       </div>
       <p className={style.registerText}>
         Don't have an account? <Link to="/register">Register</Link>

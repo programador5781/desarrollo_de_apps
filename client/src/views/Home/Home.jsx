@@ -1,12 +1,12 @@
-// import style from "./Home.module.css";
-import Cards from "../../components/Cards/Cards";
-
+ import CardsContainer from "../../components/CardsContainer/CardsContainer";
+import style from "./Home.module.css";
 
 function Home () {
     return (
-        <div >
-            <h1>Estoy en Home</h1>
-            <Cards />
+        <div className={style.home}>
+            <div className={style.CardsContainer}>
+                <CardsContainer />
+            </div>
         </div>
     )
 }

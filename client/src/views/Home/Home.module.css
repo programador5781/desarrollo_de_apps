@@ -1,0 +1,15 @@
+.home {
+    background-image: url("https://i.postimg.cc/SNWkxNY6/bgForm.jpg");
+    /* background-repeat: no-repeat;  */
+    background-attachment: fixed; /* Hace que la imagen quede fija en el fondo */
+    /* Añade otras propiedades de estilo si es necesario */
+    background-size: cover;
+    background-position: center;
+    padding-top: 60px;
+}
+
+/* .CardsContainer {
+    margin-top: 100px;
+    margin-left: 20px;    
+    
+} */
