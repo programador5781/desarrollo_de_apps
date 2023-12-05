@@ -4,7 +4,7 @@ const { API_KEY } = process.env;
 const { dataClean } = require('./cleanData');
 const { dataFilter } = require('./filterData')
 const { Op } = require('sequelize');
-const videojuegos = require('../videoGames.json')
+// const videojuegos = require('../videoGames.json')
 
 
 
