@@ -1,0 +1,25 @@
+/*Estilos para el contenedor principal*/
+/* .cardContainer {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.733);
+  } */
+  
+  /* Estilos para la imagen */
+  /* .cardImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  } */
+  
+  /* Estilos para los párrafos */
+  /* .cardInfo {
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: 'Nova Square', sans-serif;
+    color: #c5bebe;
+  } */

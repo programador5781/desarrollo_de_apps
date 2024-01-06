@@ -50,13 +50,21 @@ body {
     cursor: pointer;
     color: white;
     background-color: #333;
-    transition: background-color 0.3s ease;
+    /* transition: background-color 0.3s transform ease-in-out; */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
   }
   
   .buttons button:hover {
-    background-color: #555;
+    background-color: #f3eb0c;
+    transform: scale(1.1);
   }
   
+  .buttons button:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
 
 .registerText {
     margin-top: 20px;

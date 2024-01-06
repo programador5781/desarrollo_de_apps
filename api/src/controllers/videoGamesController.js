@@ -4,8 +4,8 @@ const { API_KEY } = process.env;
 const { dataClean } = require('./cleanData');
 const { dataFilter } = require('./filterData')
 const { Op } = require('sequelize');
-// const videojuegos = require('../videoGames.json')
-
+const data = require('./data');
+const fs = require('fs').promises;
 
 
 // Get - /videogames?name=<nombre del video juego>
@@ -15,7 +15,9 @@ const searchVideoGameByName = async (name) => {
     });
     console.log("Esto es dBVideoGame:", dBVideogames.length);
 
-    const apiResponse = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
+    // const apiResponse = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
+    // const apiResponse = await axios.get(`https://apimocha.com/pi-videogames/videogames`);
+    const apiResponse = await axios.get(data);
     const apiVideogames = apiResponse.data.results;
     // Implementa dataClean si es necesario
 
@@ -38,27 +40,69 @@ const searchVideoGameByName = async (name) => {
 
 
 // Get - /videogames
+// const getAllVideoGames = async () => {
+
+//     try {
+//         // const apiResponse = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
+//         const apiResponse = await axios.get(`https://apimocha.com/pi-videogames/videogames`);
+       
+//         const apiVideogames = apiResponse.data.results;
+//         console.log(apiVideogames);
+//         // Implementa dataClean si es necesario
+//         const apiVG = dataClean(apiVideogames);
+
+//         return apiVG;
+//     } catch (error) {
+//         throw new Error('Error al obtener todos los videojuegos: ' + error.message);
+//     }
+// };
+
+// Get - /videogames
 const getAllVideoGames = async () => {
-
     try {
-        const apiResponse = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
-        const apiVideogames = apiResponse.data.results;
-        // Implementa dataClean si es necesario
-        const apiVG = dataClean(apiVideogames);
-
-        return apiVG;
+      // Ruta al archivo JSON local
+      const filePath = 'src\\controllers\\data.json';
+  
+      // Lee el contenido del archivo JSON
+      const jsonData = await fs.readFile(filePath, 'utf-8');
+  
+      // Parsea el contenido a un objeto JavaScript
+      const apiVideogames = JSON.parse(jsonData);
+  
+      // Implementa dataClean si es necesario
+      const apiVG = dataClean(apiVideogames);
+  
+      return apiVG;
     } catch (error) {
-        throw new Error('Error al obtener todos los videojuegos: ' + error.message);
+      throw new Error('Error al obtener todos los videojuegos: ' + error.message);
     }
-};
+  };
 
 // Get - /videogames/:id
 const getVideoGameById = async (id, src) => {
     try {
         let videogame;
         if (src === 'api') {
-            const response = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}&fields=name,background_image,description,genres,rating,platforms,released,website`);
-            videogame = response.data;
+            // const response = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}&fields=name,background_image,description,genres,rating,platforms,released,website`);
+            // videogame = response.data;
+            // videogame = dataFilter([videogame])[0];
+            const response = await axios.get(`https://apimocha.com/pi-videogames/videogames/${id}?fields=name,background_image,description,genres,rating,platforms,released,website`);
+            // videogame = response.data;
+            // videogame = dataFilter([videogame])[0];
+            const newApiVideogame = response.data;
+
+            // Ejemplo: Si la respuesta tiene una estructura diferente
+            videogame = {
+                name: newApiVideogame.name,
+                background_image: newApiVideogame.background_image,
+                description: newApiVideogame.description,
+                genres: newApiVideogame.genres,
+                rating: newApiVideogame.rating,
+                platforms: newApiVideogame.platforms,
+                released: newApiVideogame.released,
+                website: newApiVideogame.website,
+            };
+
             videogame = dataFilter([videogame])[0];
 
         } else if (src === 'bdd') {

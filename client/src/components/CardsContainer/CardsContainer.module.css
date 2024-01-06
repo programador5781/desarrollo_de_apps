@@ -1,58 +1,48 @@
 /* Estilos para el contenedor principal */
-
-@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
-
-
 .cardsContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly; /* Ajusta según sea necesario */
+  gap: 20px; /* Espaciado entre las tarjetas */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-top: 100px;
+  margin-top: 60px;  
+  margin-left: 50px;
 }
 
-/* Estilos para cada Card */
-.cardItem {
-  width: calc(30% - 20px); /* Reducimos el tamaño base de las tarjetas */
-  margin-bottom: 20px;
-  box-sizing: border-box;
-  padding: 0 20px;
-  transition: transform 0.3s ease; /* Agregamos transición para transformar la escala */
-  text-align: center; /* Centramos el texto dentro de la tarjeta */
-}
 
-/* Ajustamos el margen derecho de la última tarjeta en cada fila para evitar desbordamientos */
+
 .cardItem:nth-child(3n) {
   margin-right: 0;
 }
+.cardItem {
+  width: calc((100% / 3) - 20px); /* Ajusta el ancho para mostrar 3 tarjetas por fila */
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
 
-/* Estilos responsivos para ajustar el número de tarjetas por fila en pantallas más pequeñas */
+/* Media Query para dispositivos con un ancho de pantalla de 768px o más pequeño */
+/* ----------- Estilos Responsivos ----------- */
 @media screen and (max-width: 768px) {
+  /* Estilos específicos para dispositivos con un ancho máximo de 768px */
+  .cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-30%);
+}
   .cardItem {
-    width: calc(45% - 20px); /* Ajustamos el tamaño para mostrar 2 tarjetas por fila en pantallas más pequeñas */
-  }
-
-  /* Ajustamos el margen derecho de la última tarjeta en pantallas más pequeñas */
-  .cardItem:nth-child(2n) {
-    margin-right: 0;
+      width: 100%; /* O el ancho deseado para dispositivos móviles */
+      box-sizing: border-box; /* Para incluir el padding en el ancho total */
+      flex-direction: column;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 769px) and (max-width: 967px) {
+  /* Estilos específicos para dispositivos con un ancho entre 769px y 967px */
   .cardItem {
-    width: 100%; /* Mostramos 1 tarjeta por fila en pantallas más pequeñas */
-    margin-right: 0; /* Asegurar que no haya margen derecho en pantallas más pequeñas */
+    width: calc((100% / 2) - 20px); /* Ajusta el ancho para mostrar 3 tarjetas por fila */
   }
-}
-
-/* Efecto al hacer clic */
-.cardItem:hover {
-  transform: scale(1.05); /* Aumenta el tamaño al hacer hover */
-}
-
-/* Estilo para el texto dentro de la tarjeta */
-.cardItem #id, .cardItem #name {
-  font-family: 'Nova Square', sans-serif;
-  font-size: 16px;
-  font-weight: 300;
 }
