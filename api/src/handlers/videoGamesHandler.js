@@ -15,6 +15,8 @@ const getVideoGamesHandler = async (req, res) => {
         if (name) results = await searchVideoGameByName(name);
         else results = await getAllVideoGames();
 
+        res.setHeader('Cache-Control', 'no-cache');
+
         res.status(200).json(results);
     } catch (error) {
         console.log(`Error al buscar el videojuego con nombre ${name}: ${error}`);

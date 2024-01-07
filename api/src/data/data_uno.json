@@ -1,0 +1,733 @@
+[
+	{
+		"id": 3498,
+		"name": "Grand Theft Auto V",
+		"background_image": "https://media.rawg.io/media/games/20a/20aa03a10cda45239fe22d035c0ebe64.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			}
+		],
+		"genres": [
+			"Action",
+			"Adventure"
+		],
+		"released_at": "2013-09-17",
+		"rating": 4.47,
+		"created": false
+	},
+	{
+		"id": 3328,
+		"name": "The Witcher 3: Wild Hunt",
+		"background_image": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 5,
+				"name": "Apple Macintosh",
+				"slug": "mac"
+			},
+			{
+				"id": 7,
+				"name": "Nintendo",
+				"slug": "nintendo"
+			}
+		],
+		"genres": [
+			"Action",
+			"Adventure",
+			"RPG"
+		],
+		"released_at": "2015-05-18",
+		"rating": 4.65,
+		"created": false
+	},
+	{
+		"id": 4200,
+		"name": "Portal 2",
+		"background_image": "https://media.rawg.io/media/games/2ba/2bac0e87cf45e5b508f227d281c9252a.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 5,
+				"name": "Apple Macintosh",
+				"slug": "mac"
+			},
+			{
+				"id": 6,
+				"name": "Linux",
+				"slug": "linux"
+			}
+		],
+		"genres": [
+			"Shooter",
+			"Puzzle"
+		],
+		"released_at": "2011-04-18",
+		"rating": 4.61,
+		"created": false
+	},
+	{
+		"id": 4291,
+		"name": "Counter-Strike: Global Offensive",
+		"background_image": "https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			}
+		],
+		"genres": [
+			"Action",
+			"Shooter"
+		],
+		"released_at": "2012-08-21",
+		"rating": 3.57,
+		"created": false
+	},
+	{
+		"id": 5286,
+		"name": "Tomb Raider (2013)",
+		"background_image": "https://media.rawg.io/media/games/021/021c4e21a1824d2526f925eff6324653.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 5,
+				"name": "Apple Macintosh",
+				"slug": "mac"
+			}
+		],
+		"genres": [
+			"Action",
+			"Adventure"
+		],
+		"released_at": "2013-03-05",
+		"rating": 4.05,
+		"created": false
+	},
+	{
+		"id": 13536,
+		"name": "Portal",
+		"background_image": "https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 8,
+				"name": "Android",
+				"slug": "android"
+			},
+			{
+				"id": 5,
+				"name": "Apple Macintosh",
+				"slug": "mac"
+			},
+			{
+				"id": 6,
+				"name": "Linux",
+				"slug": "linux"
+			},
+			{
+				"id": 7,
+				"name": "Nintendo",
+				"slug": "nintendo"
+			}
+		],
+		"genres": [
+			"Adventure",
+			"Puzzle"
+		],
+		"released_at": "2007-10-09",
+		"rating": 4.51,
+		"created": false
+	},
+	{
+		"id": 12020,
+		"name": "Left 4 Dead 2",
+		"background_image": "https://media.rawg.io/media/games/d58/d588947d4286e7b5e0e12e1bea7d9844.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 5,
+				"name": "Apple Macintosh",
+				"slug": "mac"
+			},
+			{
+				"id": 6,
+				"name": "Linux",
+				"slug": "linux"
+			}
+		],
+		"genres": [
+			"Action",
+			"Shooter"
+		],
+		"released_at": "2009-11-17",
+		"rating": 4.09,
+		"created": false
+	},
+	{
+		"id": 5679,
+		"name": "The Elder Scrolls V: Skyrim",
+		"background_image": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 7,
+				"name": "Nintendo",
+				"slug": "nintendo"
+			}
+		],
+		"genres": [
+			"Action",
+			"RPG"
+		],
+		"released_at": "2011-11-11",
+		"rating": 4.42,
+		"created": false
+	},
+	{
+		"id": 28,
+		"name": "Red Dead Redemption 2",
+		"background_image": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			}
+		],
+		"genres": [
+			"Action",
+			"Adventure"
+		],
+		"released_at": "2018-10-26",
+		"rating": 4.59,
+		"created": false
+	},
+	{
+		"id": 4062,
+		"name": "BioShock Infinite",
+		"background_image": "https://media.rawg.io/media/games/fc1/fc1307a2774506b5bd65d7e8424664a7.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 6,
+				"name": "Linux",
+				"slug": "linux"
+			},
+			{
+				"id": 7,
+				"name": "Nintendo",
+				"slug": "nintendo"
+			}
+		],
+		"genres": [
+			"Action",
+			"Shooter"
+		],
+		"released_at": "2013-03-26",
+		"rating": 4.38,
+		"created": false
+	},
+	{
+		"id": 802,
+		"name": "Borderlands 2",
+		"background_image": "https://media.rawg.io/media/games/49c/49c3dfa4ce2f6f140cc4825868e858cb.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 8,
+				"name": "Android",
+				"slug": "android"
+			},
+			{
+				"id": 5,
+				"name": "Apple Macintosh",
+				"slug": "mac"
+			},
+			{
+				"id": 6,
+				"name": "Linux",
+				"slug": "linux"
+			}
+		],
+		"genres": [
+			"Action",
+			"Shooter",
+			"RPG"
+		],
+		"released_at": "2012-09-18",
+		"rating": 4.01,
+		"created": false
+	},
+	{
+		"id": 3439,
+		"name": "Life is Strange",
+		"background_image": "https://media.rawg.io/media/games/562/562553814dd54e001a541e4ee83a591c.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 4,
+				"name": "iOS",
+				"slug": "ios"
+			},
+			{
+				"id": 8,
+				"name": "Android",
+				"slug": "android"
+			},
+			{
+				"id": 5,
+				"name": "Apple Macintosh",
+				"slug": "mac"
+			},
+			{
+				"id": 6,
+				"name": "Linux",
+				"slug": "linux"
+			}
+		],
+		"genres": [
+			"Adventure"
+		],
+		"released_at": "2015-01-29",
+		"rating": 4.12,
+		"created": false
+	},
+	{
+		"id": 13537,
+		"name": "Half-Life 2",
+		"background_image": "https://media.rawg.io/media/games/b8c/b8c243eaa0fbac8115e0cdccac3f91dc.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 8,
+				"name": "Android",
+				"slug": "android"
+			},
+			{
+				"id": 5,
+				"name": "Apple Macintosh",
+				"slug": "mac"
+			},
+			{
+				"id": 6,
+				"name": "Linux",
+				"slug": "linux"
+			}
+		],
+		"genres": [
+			"Action",
+			"Shooter"
+		],
+		"released_at": "2004-11-16",
+		"rating": 4.49,
+		"created": false
+	},
+	{
+		"id": 4286,
+		"name": "BioShock",
+		"background_image": "https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 5,
+				"name": "Apple Macintosh",
+				"slug": "mac"
+			}
+		],
+		"genres": [
+			"Action",
+			"Shooter"
+		],
+		"released_at": "2007-08-21",
+		"rating": 4.36,
+		"created": false
+	},
+	{
+		"id": 32,
+		"name": "Destiny 2",
+		"background_image": "https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 14,
+				"name": "Web",
+				"slug": "web"
+			}
+		],
+		"genres": [
+			"Action",
+			"Shooter",
+			"Adventure",
+			"Massively Multiplayer"
+		],
+		"released_at": "2017-09-06",
+		"rating": 3.54,
+		"created": false
+	},
+	{
+		"id": 1030,
+		"name": "Limbo",
+		"background_image": "https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 4,
+				"name": "iOS",
+				"slug": "ios"
+			},
+			{
+				"id": 8,
+				"name": "Android",
+				"slug": "android"
+			},
+			{
+				"id": 5,
+				"name": "Apple Macintosh",
+				"slug": "mac"
+			},
+			{
+				"id": 6,
+				"name": "Linux",
+				"slug": "linux"
+			},
+			{
+				"id": 7,
+				"name": "Nintendo",
+				"slug": "nintendo"
+			}
+		],
+		"genres": [
+			"Adventure",
+			"Indie",
+			"Puzzle",
+			"Platformer"
+		],
+		"released_at": "2010-07-21",
+		"rating": 4.15,
+		"created": false
+	},
+	{
+		"id": 58175,
+		"name": "God of War (2018)",
+		"background_image": "https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			}
+		],
+		"genres": [
+			"Action",
+			"Adventure",
+			"RPG"
+		],
+		"released_at": "2018-04-20",
+		"rating": 4.57,
+		"created": false
+	},
+	{
+		"id": 3070,
+		"name": "Fallout 4",
+		"background_image": "https://media.rawg.io/media/games/d82/d82990b9c67ba0d2d09d4e6fa88885a7.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			}
+		],
+		"genres": [
+			"Action",
+			"RPG"
+		],
+		"released_at": "2015-11-09",
+		"rating": 3.8,
+		"created": false
+	},
+	{
+		"id": 2454,
+		"name": "DOOM (2016)",
+		"background_image": "https://media.rawg.io/media/games/587/587588c64afbff80e6f444eb2e46f9da.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 2,
+				"name": "PlayStation",
+				"slug": "playstation"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 7,
+				"name": "Nintendo",
+				"slug": "nintendo"
+			}
+		],
+		"genres": [
+			"Action",
+			"Shooter"
+		],
+		"released_at": "2016-05-13",
+		"rating": 4.38,
+		"created": false
+	},
+	{
+		"id": 3939,
+		"name": "PAYDAY 2",
+		"background_image": "https://media.rawg.io/media/games/73e/73eecb8909e0c39fb246f457b5d6cbbe.jpg",
+		"platforms": [
+			{
+				"id": 1,
+				"name": "PC",
+				"slug": "pc"
+			},
+			{
+				"id": 3,
+				"name": "Xbox",
+				"slug": "xbox"
+			},
+			{
+				"id": 6,
+				"name": "Linux",
+				"slug": "linux"
+			}
+		],
+		"genres": [
+			"Action",
+			"Shooter"
+		],
+		"released_at": "2013-08-13",
+		"rating": 3.51,
+		"created": false
+	}
+]

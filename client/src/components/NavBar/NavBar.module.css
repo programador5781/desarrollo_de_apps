@@ -1,7 +1,19 @@
 /* Estilos de ejemplo para la clase 'active' */
 .active {
-    background-color: #333; /* Cambia el color de fondo */
-    color: white; /* Cambia el color del texto */
-    /* Otros estilos que desees aplicar */
-  }
-  
+  background-color: #333; /* Cambia el color de fondo */
+  color: white; /* Cambia el color del texto */
+  /* Otros estilos que desees aplicar */
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  transition: filter 1s ease-in-out, transform 3s; /* Agrega una transición para suavizar el cambio */
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 1em #646cffaa);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+

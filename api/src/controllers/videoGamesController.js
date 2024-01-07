@@ -4,64 +4,56 @@ const { API_KEY } = process.env;
 const { dataClean } = require('./cleanData');
 const { dataFilter } = require('./filterData')
 const { Op } = require('sequelize');
-const data = require('./data');
+const data = require('./data1');
 const fs = require('fs').promises;
 
 
 // Get - /videogames?name=<nombre del video juego>
 const searchVideoGameByName = async (name) => {
-    const dBVideogames = await VideoGame.findAll({
-        where: { name: { [Op.iLike]: `%${name}%` } }
-    });
-    console.log("Esto es dBVideoGame:", dBVideogames.length);
+    try {
+        let currentPage = 1;
+        let combinedResults = [];
 
-    // const apiResponse = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
-    // const apiResponse = await axios.get(`https://apimocha.com/pi-videogames/videogames`);
-    const apiResponse = await axios.get(data);
-    const apiVideogames = apiResponse.data.results;
-    // Implementa dataClean si es necesario
+        while (true) {
+            const jsonPath = `./src/data/data${currentPage}.json`;
 
-    const apiVG = dataClean(apiVideogames)
+            const jsonData = await fs.readFile(jsonPath, 'utf-8');
+            const json = JSON.parse(jsonData);
 
-    const filterAPILocal = dBVideogames.filter(videogame => videogame.name.toLowerCase().startsWith(name.toLowerCase()));
-    console.log("Esto es filterAPILocal: ", filterAPILocal);
+            // Hay que asegurarnos de que dataClean devuelve un array.
+            const apiVideogames = dataClean(json);
 
-    const filterAPIExternal = apiVG.filter(videogame => videogame.name.toLowerCase().startsWith(name.toLowerCase()));
-    // console.log("Esto es filterAPIExternal: ", filterAPIExternal);
+            const filterAPILocal = apiVideogames.filter(videogame => videogame.name.toLowerCase().startsWith(name.toLowerCase()));
 
-    if (filterAPIExternal.length === 0 && filterAPILocal.length === 0) {
-        return 'No se encontró ningún videojuego con el nombre ' + name;
+            if (filterAPILocal.length > 0) {
+                combinedResults = [...combinedResults, ...filterAPILocal];
+            }
+
+            if (json.next) {
+                currentPage += 1;
+            } else {
+                break;
+            }
+        }
+
+        if (combinedResults.length === 0) {
+            return 'No se encontró ningún videojuego con el nombre ' + name;
+        }
+
+        combinedResults = combinedResults.slice(0, 15);
+
+        return combinedResults;
+    } catch (error) {
+        console.error('Error al leer el archivo JSON:', error.message);
+        return 'Error al leer el archivo JSON';
     }
-
-    const combinedResults = [...filterAPIExternal, ...filterAPILocal].slice(0, 15);
-
-    return combinedResults;
 };
 
-
-// Get - /videogames
-// const getAllVideoGames = async () => {
-
-//     try {
-//         // const apiResponse = await axios.get(`https://api.rawg.io/api/games?key=${API_KEY}`);
-//         const apiResponse = await axios.get(`https://apimocha.com/pi-videogames/videogames`);
-       
-//         const apiVideogames = apiResponse.data.results;
-//         console.log(apiVideogames);
-//         // Implementa dataClean si es necesario
-//         const apiVG = dataClean(apiVideogames);
-
-//         return apiVG;
-//     } catch (error) {
-//         throw new Error('Error al obtener todos los videojuegos: ' + error.message);
-//     }
-// };
-
-// Get - /videogames
+// Get - /videogames ----> cargando datos desde un json
 const getAllVideoGames = async () => {
     try {
       // Ruta al archivo JSON local
-      const filePath = 'src\\controllers\\data.json';
+      const filePath = 'src\\data\\data1.json';
   
       // Lee el contenido del archivo JSON
       const jsonData = await fs.readFile(filePath, 'utf-8');
@@ -71,6 +63,7 @@ const getAllVideoGames = async () => {
   
       // Implementa dataClean si es necesario
       const apiVG = dataClean(apiVideogames);
+    //   console.log(apiVG)
   
       return apiVG;
     } catch (error) {
@@ -79,47 +72,41 @@ const getAllVideoGames = async () => {
   };
 
 // Get - /videogames/:id
-const getVideoGameById = async (id, src) => {
+const getVideoGameById = async (id) => {
     try {
-        let videogame;
-        if (src === 'api') {
-            // const response = await axios.get(`https://api.rawg.io/api/games/${id}?key=${API_KEY}&fields=name,background_image,description,genres,rating,platforms,released,website`);
-            // videogame = response.data;
-            // videogame = dataFilter([videogame])[0];
-            const response = await axios.get(`https://apimocha.com/pi-videogames/videogames/${id}?fields=name,background_image,description,genres,rating,platforms,released,website`);
-            // videogame = response.data;
-            // videogame = dataFilter([videogame])[0];
-            const newApiVideogame = response.data;
+        // Parseamos el ID a número
+        id = parseInt(id, 10);
+        let currentPage = 1;
 
-            // Ejemplo: Si la respuesta tiene una estructura diferente
-            videogame = {
-                name: newApiVideogame.name,
-                background_image: newApiVideogame.background_image,
-                description: newApiVideogame.description,
-                genres: newApiVideogame.genres,
-                rating: newApiVideogame.rating,
-                platforms: newApiVideogame.platforms,
-                released: newApiVideogame.released,
-                website: newApiVideogame.website,
-            };
+        while (true) {
+            const jsonPath = `./src/data/data${currentPage}.json`;
 
-            videogame = dataFilter([videogame])[0];
+            const jsonData = await fs.readFile(jsonPath, 'utf-8');
+            const json = JSON.parse(jsonData);
 
-        } else if (src === 'bdd') {
-            videogame = await VideoGame.findByPk(id);
-            if (!videogame) {
-                throw new Error(`No se encontró ningún videojuego con el ID ${id}`);
+            const apiVideogames = dataClean(json);
+
+            // Buscamos el videojuego por ID en el array
+            const foundVideoGame = apiVideogames.find(videogame => videogame.id === id);
+
+            if (foundVideoGame) {
+                // console.log('Videojuego encontrado:', foundVideoGame);
+                return foundVideoGame;
             }
-            // videogame = dataFilter([videogame])[0];
-        } else {
-            throw new Error(`Fuente de datos desconocida: ${src}`);
-        }
 
-        return videogame;
+            if (json.next) {
+                currentPage += 1;
+            } else {
+                // No se encontró el videojuego con el ID proporcionado
+                return 'No se encontró ningún videojuego con el ID ' + id;
+            }
+        }
     } catch (error) {
-        throw new Error(`Error al obtener el videojuego: ${error.message}`);
+        console.error('Error al leer el archivo JSON:', error.message);
+        return 'Error al leer el archivo JSON';
     }
 };
+
 
 // Put - /videogames/:id
 const updateVideoGameById = async (id, updatedData) => {
